@@ -6,7 +6,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models
 
-# --- CONSTANTS ---
+# constants
 IMG_HEIGHT = 32
 IMG_WIDTH = 32
 NUM_CLASSES = 46
@@ -130,13 +130,13 @@ def plot_training_history(history, model_name):
     plt.show()
 
 def main():
-    # 1. Load Data
+    # 1. Load Data from dataset
     print("Loading Training Data...")
     train_data, train_labels, label_map = load_data(TRAIN_PATH)
     print("Loading Test Data...")
     test_data, test_labels, _ = load_data(TEST_PATH)
 
-    # 2. Shuffle Training Data (Good practice)
+    # 2. Shuffle Training Data
     indices = np.arange(train_data.shape[0])
     np.random.shuffle(indices)
     train_data = train_data[indices]
